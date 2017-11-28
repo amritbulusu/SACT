@@ -1,0 +1,9 @@
+index = 0
+  for sentence in self.sentences:
+    content  = sentence['text']['content']
+    sentence_begin = sentence['text']['beginOffset']
+    sentence_end = sentence_begin + len(content) - 1
+    while index < len(self.tokens) and self.tokens[index]['text']['beginOffset'] <= sentence_end:
+      # This token is in this sentence
+      index += 1
+      
